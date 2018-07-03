@@ -26,17 +26,31 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
+        function checkDefined(item, index) {
+            expect(item).toBeDefined('Error at array index: ' + index);
+            expect(item.length).not.toBe(0, 'Error at array index: ' + index);
+        }
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+        it('each feed url is defined and not empty', function() {
+            allFeeds.forEach(function(feed, index) {
+                checkDefined(feed.url, index);
+            });
+        });
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('each feed name is defined and not empty', function() {
+            allFeeds.forEach(function(feed, index) {
+                checkDefined(feed.name, index);
+            });
+        });
     });
 
 

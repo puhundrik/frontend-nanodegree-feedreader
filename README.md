@@ -16,9 +16,9 @@ or
 
 * Download [zip-file](https://github.com/puhundrik/udacity_feedreader_testing/archive/master.zip) with repository, unpack the files to any folder
 
-Then just open index.html file in your favourite browser.
+Then just open index.html file in your favourite browser. When the page completes to load the results of the tests will appear at the bottom of the page.
 
 ## REQUIREMENTS
 
 1. Browser with JavaScript enabled.
-2. Internet connection to load external scripts and fonts.
+2. Internet connection to load feeds, external scripts and fonts.

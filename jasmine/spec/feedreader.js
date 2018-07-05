@@ -27,8 +27,8 @@ $(function() {
         });
 
         function checkDefined(item, index) {
-            expect(item).toBeDefined('Error at array index: ' + index);
-            expect(item.length).not.toBe(0, 'Error at array index: ' + index);
+            expect(item).toBeDefined('The value is not defined at array index: ' + index);
+            expect(item.length).not.toBe(0, 'The value is empty at array index: ' + index);
         }
 
         /* This is a test that loops through each feed
@@ -88,8 +88,8 @@ $(function() {
          * a single .entry element within the .feed container.
          */
         it('are loaded', function(done) {
-            expect($('.feed').length).toBeGreaterThan(0);
-            expect($('.feed .entry').length).toBeGreaterThan(0);
+            expect($('.feed').length).toBeGreaterThan(0, 'The feed container is empty');
+            expect($('.feed .entry').length).toBeGreaterThan(0, 'There are no feed entries');
             done();
         });
     });
@@ -124,8 +124,10 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          */
         it('is loaded', function() {
-            expect(feedOne.length).not.toBe(0);
-            expect(feedTwo.length).not.toBe(0);
+            expect(feedOne).toBeDefined('Feed One is undefined');
+            expect(feedTwo).toBeDefined('Feed Two is undefined');
+            expect(feedOne.length).not.toBe(0, 'Feed One is empty');
+            expect(feedTwo.length).not.toBe(0, 'Feed Two is empty');
             expect(feedOne).not.toEqual(feedTwo);
         });
     });
